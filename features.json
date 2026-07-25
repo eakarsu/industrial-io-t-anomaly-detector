@@ -174,10 +174,12 @@
     "canonicalKey": "ai report",
     "aliases": [],
     "kinds": [
+      "ai-page",
       "page"
     ],
     "routes": [
       "/AIReports",
+      "/ai-reports?tool=ai-reports",
       "ai-reports"
     ],
     "sourceProjects": [
@@ -187,6 +189,13 @@
       "healthcare-life-sciences/industrial-io-t-anomaly-detector"
     ],
     "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "AIpoweredembryo",
+        "path": "frontend/src/pages/AIReports.jsx:1",
+        "route": "/ai-reports?tool=ai-reports",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      },
       {
         "kind": "page",
         "sourceProject": "AIpoweredembryo",
@@ -2676,6 +2685,41 @@
     ]
   },
   {
+    "name": "Generate",
+    "canonicalKey": "generate",
+    "aliases": [],
+    "kinds": [
+      "ai-page",
+      "api"
+    ],
+    "routes": [
+      "/ai-reports?tool=generate",
+      "/generate"
+    ],
+    "sourceProjects": [
+      "AIpoweredembryo"
+    ],
+    "consolidatedFromApps": [
+      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+    ],
+    "evidence": [
+      {
+        "kind": "ai-page",
+        "sourceProject": "AIpoweredembryo",
+        "path": "frontend/src/pages/AIReports.jsx:1",
+        "route": "/ai-reports?tool=generate",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      },
+      {
+        "kind": "api",
+        "sourceProject": "AIpoweredembryo",
+        "path": "backend/routes/ai-reports.js:29",
+        "route": "/generate",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      }
+    ]
+  },
+  {
     "name": "Genetic Risk Assess",
     "canonicalKey": "assess genetic risk",
     "aliases": [],
@@ -3827,6 +3871,32 @@
         "path": "backend/src/routes/denialAnalyzer.js:73",
         "route": "/recent",
         "originApp": "healthcare-life-sciences/hipaa-training-compliance-auditor"
+      }
+    ]
+  },
+  {
+    "name": "Recommend",
+    "canonicalKey": "recommend",
+    "aliases": [],
+    "kinds": [
+      "api"
+    ],
+    "routes": [
+      "/recommend"
+    ],
+    "sourceProjects": [
+      "industrial-capabilities-in-space"
+    ],
+    "consolidatedFromApps": [
+      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+    ],
+    "evidence": [
+      {
+        "kind": "api",
+        "sourceProject": "industrial-capabilities-in-space",
+        "path": "backend/routes/launch-economics.js:235",
+        "route": "/recommend",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
   },
