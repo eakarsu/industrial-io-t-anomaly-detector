@@ -1,13 +1,105 @@
 [
   {
-    "name": "AI Lab",
-    "canonicalKey": "ai lab",
+    "name": "Acknowledge",
+    "canonicalKey": "acknowledge",
     "aliases": [],
     "kinds": [
-      "page"
+      "api"
     ],
     "routes": [
-      "ai_lab"
+      "/:id/acknowledge",
+      "/api/reminders/:id/acknowledge",
+      "/handoffs/:handoffId/acknowledge"
+    ],
+    "sourceProjects": [
+      "AIHIPAATrainingComplianceAuditor",
+      "AIIndustrialIoTAnomalyDetector",
+      "ai-personalized-medicine"
+    ],
+    "consolidatedFromApps": [
+      "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged",
+      "healthcare-life-sciences/hipaa-training-compliance-auditor",
+      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+    ],
+    "evidence": [
+      {
+        "kind": "api",
+        "sourceProject": "ai-personalized-medicine",
+        "path": "backend/routes/governedClinical.js:291",
+        "route": "/handoffs/:handoffId/acknowledge",
+        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
+      },
+      {
+        "kind": "api",
+        "sourceProject": "AIIndustrialIoTAnomalyDetector",
+        "path": "backend/routes/alerts.js:97",
+        "route": "/:id/acknowledge",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      },
+      {
+        "kind": "api",
+        "sourceProject": "AIHIPAATrainingComplianceAuditor",
+        "path": "backend/src/server.js:141",
+        "route": "/api/reminders/:id/acknowledge",
+        "originApp": "healthcare-life-sciences/hipaa-training-compliance-auditor"
+      }
+    ]
+  },
+  {
+    "name": "Action",
+    "canonicalKey": "action",
+    "aliases": [
+      "Actions"
+    ],
+    "kinds": [
+      "api"
+    ],
+    "routes": [
+      "/material-lots/:id/actions/:action",
+      "/recommendations/:id/actions",
+      "/work-orders/:id/actions/:action"
+    ],
+    "sourceProjects": [
+      "AIhomecompanion",
+      "industrial-capabilities-in-space"
+    ],
+    "consolidatedFromApps": [
+      "healthcare-life-sciences/coaching-wellness-merged",
+      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+    ],
+    "evidence": [
+      {
+        "kind": "api",
+        "sourceProject": "industrial-capabilities-in-space",
+        "path": "backend/routes/manufacturing.js:200",
+        "route": "/material-lots/:id/actions/:action",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      },
+      {
+        "kind": "api",
+        "sourceProject": "industrial-capabilities-in-space",
+        "path": "backend/routes/manufacturing.js:282",
+        "route": "/work-orders/:id/actions/:action",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      },
+      {
+        "kind": "api",
+        "sourceProject": "AIhomecompanion",
+        "path": "backend/governance/routes.js:87",
+        "route": "/recommendations/:id/actions",
+        "originApp": "healthcare-life-sciences/coaching-wellness-merged"
+      }
+    ]
+  },
+  {
+    "name": "Advance Status",
+    "canonicalKey": "advance status",
+    "aliases": [],
+    "kinds": [
+      "api"
+    ],
+    "routes": [
+      "/missions/:id/advance-status"
     ],
     "sourceProjects": [
       "industrial-capabilities-in-space"
@@ -17,10 +109,62 @@
     ],
     "evidence": [
       {
-        "kind": "page",
+        "kind": "api",
         "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:65",
-        "route": "ai_lab",
+        "path": "backend/routes/servicing.js:217",
+        "route": "/missions/:id/advance-status",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      }
+    ]
+  },
+  {
+    "name": "Advisory",
+    "canonicalKey": "advisory",
+    "aliases": [],
+    "kinds": [
+      "api"
+    ],
+    "routes": [
+      "/cases/:id/advisory"
+    ],
+    "sourceProjects": [
+      "AIpoweredembryo"
+    ],
+    "consolidatedFromApps": [
+      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+    ],
+    "evidence": [
+      {
+        "kind": "api",
+        "sourceProject": "AIpoweredembryo",
+        "path": "backend/routes/authoritative.js:9",
+        "route": "/cases/:id/advisory",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      }
+    ]
+  },
+  {
+    "name": "AI Operational Brief",
+    "canonicalKey": "ai brief operational",
+    "aliases": [],
+    "kinds": [
+      "api"
+    ],
+    "routes": [
+      "/ai-operational-brief"
+    ],
+    "sourceProjects": [
+      "AIpoweredembryo"
+    ],
+    "consolidatedFromApps": [
+      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+    ],
+    "evidence": [
+      {
+        "kind": "api",
+        "sourceProject": "AIpoweredembryo",
+        "path": "backend/routes/authoritative.js:10",
+        "route": "/ai-operational-brief",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -60,57 +204,6 @@
     ]
   },
   {
-    "name": "AI Research Tools",
-    "canonicalKey": "ai research",
-    "aliases": [
-      "AI Research Tools Page"
-    ],
-    "kinds": [
-      "navigation",
-      "page"
-    ],
-    "routes": [
-      "/AIResearchToolsPage",
-      "/ai-research-tools"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:61",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:95",
-        "route": "/ai-research-tools",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:61",
-        "route": "/ai-research-tools",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/AIResearchToolsPage.tsx",
-        "route": "/AIResearchToolsPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
     "name": "AI Scores",
     "canonicalKey": "ai score",
     "aliases": [],
@@ -145,248 +238,6 @@
     ]
   },
   {
-    "name": "Acknowledge",
-    "canonicalKey": "acknowledge",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/:id/acknowledge",
-      "/api/reminders/:id/acknowledge"
-    ],
-    "sourceProjects": [
-      "AIHIPAATrainingComplianceAuditor",
-      "AIIndustrialIoTAnomalyDetector"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/hipaa-training-compliance-auditor",
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "AIIndustrialIoTAnomalyDetector",
-        "path": "backend/routes/alerts.js:97",
-        "route": "/:id/acknowledge",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIHIPAATrainingComplianceAuditor",
-        "path": "backend/src/server.js:190",
-        "route": "/api/reminders/:id/acknowledge",
-        "originApp": "healthcare-life-sciences/hipaa-training-compliance-auditor"
-      }
-    ]
-  },
-  {
-    "name": "Administration",
-    "canonicalKey": "administration",
-    "aliases": [],
-    "kinds": [
-      "navigation"
-    ],
-    "routes": [],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:72",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Advance Status",
-    "canonicalKey": "advance status",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/missions/:id/advance-status"
-    ],
-    "sourceProjects": [
-      "industrial-capabilities-in-space"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "backend/routes/servicing.js:217",
-        "route": "/missions/:id/advance-status",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Analyze Assay",
-    "canonicalKey": "analyze assay",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/analyze-assay"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:48",
-        "route": "/analyze-assay",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Analyze Instrument",
-    "canonicalKey": "analyze instrument",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/analyze-instrument"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:387",
-        "route": "/analyze-instrument",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Analyze Molecule",
-    "canonicalKey": "analyze molecule",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/analyze-molecule"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:11",
-        "route": "/analyze-molecule",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Analyze Search Quality",
-    "canonicalKey": "analyze quality search",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/analyze-search-quality"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:256",
-        "route": "/analyze-search-quality",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Analyze Tenant",
-    "canonicalKey": "analyze tenant",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/analyze-tenant"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:415",
-        "route": "/analyze-tenant",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Analyze User",
-    "canonicalKey": "analyze user",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/analyze-user"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:443",
-        "route": "/analyze-user",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
     "name": "Anomaly Screen",
     "canonicalKey": "anomaly screen",
     "aliases": [],
@@ -413,14 +264,14 @@
     ]
   },
   {
-    "name": "Assay Collab",
-    "canonicalKey": "assay collab",
+    "name": "Assay Readiness",
+    "canonicalKey": "assay readiness",
     "aliases": [],
     "kinds": [
-      "page"
+      "api"
     ],
     "routes": [
-      "/gap/assay-collab"
+      "/assay-readiness"
     ],
     "sourceProjects": [
       "tetrascience"
@@ -430,110 +281,53 @@
     ],
     "evidence": [
       {
-        "kind": "page",
+        "kind": "api",
         "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:106",
-        "route": "/gap/assay-collab",
+        "path": "backend/src/routes/runtimeAi.ts:9",
+        "route": "/assay-readiness",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
   },
   {
-    "name": "Assay Results Page",
-    "canonicalKey": "assay result",
-    "aliases": [
-      "Assay Result"
-    ],
-    "kinds": [
-      "model",
-      "page"
-    ],
-    "routes": [
-      "/AssayResultsPage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "model",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/models/AssayResult.ts",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/AssayResultsPage.tsx",
-        "route": "/AssayResultsPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Assays",
-    "canonicalKey": "assay",
+    "name": "Attempt",
+    "canonicalKey": "attempt",
     "aliases": [],
     "kinds": [
-      "navigation",
-      "page"
+      "api"
     ],
     "routes": [
-      "/assays"
+      "/deliveries/:id/attempt"
     ],
     "sourceProjects": [
-      "tetrascience"
+      "AIpoweredembryo"
     ],
     "consolidatedFromApps": [
       "healthcare-life-sciences/industrial-io-t-anomaly-detector"
     ],
     "evidence": [
       {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:38",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:84",
-        "route": "/assays",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:38",
-        "route": "/assays",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/Dashboard.tsx:97",
-        "route": "/assays",
+        "kind": "api",
+        "sourceProject": "AIpoweredembryo",
+        "path": "backend/routes/authoritative.js:13",
+        "route": "/deliveries/:id/attempt",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
   },
   {
-    "name": "Bases",
+    "name": "Bases Page",
     "canonicalKey": "base",
     "aliases": [
-      "Bases Page"
+      "Bases"
     ],
     "kinds": [
+      "api",
       "page"
     ],
     "routes": [
       "/BasesPage",
-      "bases"
+      "/bases"
     ],
     "sourceProjects": [
       "industrial-capabilities-in-space"
@@ -543,10 +337,10 @@
     ],
     "evidence": [
       {
-        "kind": "page",
+        "kind": "api",
         "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:58",
-        "route": "bases",
+        "path": "backend/routes/manufacturing.js:129",
+        "route": "/bases",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       },
       {
@@ -580,41 +374,6 @@
         "sourceProject": "industrial-capabilities-in-space",
         "path": "backend/routes/orbital-platforms.js:201",
         "route": "/batches/:batchId",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Bulk Import",
-    "canonicalKey": "bulk import",
-    "aliases": [],
-    "kinds": [
-      "api",
-      "page"
-    ],
-    "routes": [
-      "/bulk-import",
-      "/gap/bulk-import"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:706",
-        "route": "/bulk-import",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:107",
-        "route": "/gap/bulk-import",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -778,39 +537,6 @@
         "sourceProject": "AIIndustrialIoTAnomalyDetector",
         "path": "backend/routes/health.js:82",
         "route": "/:id/calculate",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Calibration Schedule",
-    "canonicalKey": "calibration schedule",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/calibration-schedule"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/customViews.js:141",
-        "route": "/calibration-schedule",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/customViews.js:146",
-        "route": "/calibration-schedule",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -1441,118 +1167,14 @@
     ]
   },
   {
-    "name": "Collab Network",
-    "canonicalKey": "collab network",
+    "name": "Change Orders",
+    "canonicalKey": "change order",
     "aliases": [],
     "kinds": [
       "api"
     ],
     "routes": [
-      "/collab-network"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/aiExtras.ts:94",
-        "route": "/collab-network",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Collaboration Suggester",
-    "canonicalKey": "collaboration suggester",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "/gap/collaboration-suggester"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:101",
-        "route": "/gap/collaboration-suggester",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Collaboration Suggestion",
-    "canonicalKey": "collaboration suggestion",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/collaboration-suggestion"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:519",
-        "route": "/collaboration-suggestion",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Comment",
-    "canonicalKey": "comment",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/comment"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:725",
-        "route": "/comment",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Comms Latency Queue",
-    "canonicalKey": "comms latency queue",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "gap/comms-latency-queue"
+      "/work-orders/:id/change-orders"
     ],
     "sourceProjects": [
       "industrial-capabilities-in-space"
@@ -1562,164 +1184,10 @@
     ],
     "evidence": [
       {
-        "kind": "page",
+        "kind": "api",
         "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:82",
-        "route": "gap/comms-latency-queue",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Compliance",
-    "canonicalKey": "compliance",
-    "aliases": [
-      "Compliance Page"
-    ],
-    "kinds": [
-      "navigation",
-      "page"
-    ],
-    "routes": [
-      "/Compliance",
-      "/CompliancePage",
-      "/compliance"
-    ],
-    "sourceProjects": [
-      "AIHealthcareBillingOptimizer",
-      "AIPharmacyOperationsManager",
-      "AIPrecisionFermentationProcessOptimizer",
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/acceleratedrug",
-      "healthcare-life-sciences/hipaa-training-compliance-auditor",
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector",
-      "healthcare-life-sciences/pharmacy-operations-manager"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "AIPharmacyOperationsManager",
-        "path": "frontend/src/App.js:111",
-        "route": "/compliance",
-        "originApp": "healthcare-life-sciences/pharmacy-operations-manager"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIPharmacyOperationsManager",
-        "path": "frontend/src/pages/Compliance.js",
-        "route": "/Compliance",
-        "originApp": "healthcare-life-sciences/pharmacy-operations-manager"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIPharmacyOperationsManager",
-        "path": "frontend/src/pages/Dashboard.js:58",
-        "route": "/compliance",
-        "originApp": "healthcare-life-sciences/pharmacy-operations-manager"
-      },
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:74",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:92",
-        "route": "/compliance",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:74",
-        "route": "/compliance",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/Dashboard.tsx:177",
-        "route": "/compliance",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "navigation",
-        "sourceProject": "AIPrecisionFermentationProcessOptimizer",
-        "path": "client/src/components/Sidebar.jsx:63",
-        "route": "",
-        "originApp": "healthcare-life-sciences/acceleratedrug"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIPrecisionFermentationProcessOptimizer",
-        "path": "client/src/App.jsx:114",
-        "route": "/compliance",
-        "originApp": "healthcare-life-sciences/acceleratedrug"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIPrecisionFermentationProcessOptimizer",
-        "path": "client/src/pages/Dashboard.jsx:18",
-        "route": "/compliance",
-        "originApp": "healthcare-life-sciences/acceleratedrug"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIPrecisionFermentationProcessOptimizer",
-        "path": "client/src/pages/CompliancePage.jsx",
-        "route": "/CompliancePage",
-        "originApp": "healthcare-life-sciences/acceleratedrug"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIHealthcareBillingOptimizer",
-        "path": "frontend/src/App.js:111",
-        "route": "/compliance",
-        "originApp": "healthcare-life-sciences/hipaa-training-compliance-auditor"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIHealthcareBillingOptimizer",
-        "path": "frontend/src/components/Sidebar.js:21",
-        "route": "/compliance",
-        "originApp": "healthcare-life-sciences/hipaa-training-compliance-auditor"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIHealthcareBillingOptimizer",
-        "path": "frontend/src/pages/CompliancePage.js",
-        "route": "/CompliancePage",
-        "originApp": "healthcare-life-sciences/hipaa-training-compliance-auditor"
-      }
-    ]
-  },
-  {
-    "name": "Compliance Audit Page",
-    "canonicalKey": "audit compliance",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "/ComplianceAuditPage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/ComplianceAuditPage.tsx",
-        "route": "/ComplianceAuditPage",
+        "path": "backend/routes/manufacturing.js:521",
+        "route": "/work-orders/:id/change-orders",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -1746,32 +1214,6 @@
         "sourceProject": "industrial-capabilities-in-space",
         "path": "backend/routes/launch-economics.js:50",
         "route": "/stats/cost-curve",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Crew Task Sequencer",
-    "canonicalKey": "crew sequencer task",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "gap/crew-task-sequencer"
-    ],
-    "sourceProjects": [
-      "industrial-capabilities-in-space"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:80",
-        "route": "gap/crew-task-sequencer",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -1806,234 +1248,6 @@
         "path": "scripts/screenshot_custom.js:30",
         "route": "/tmp/custom_AIpoweredembryo.png",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Custom Views Page",
-    "canonicalKey": "custom views",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "/CustomViewsPage"
-    ],
-    "sourceProjects": [
-      "AIAcceleratedrug",
-      "AIAgingInPlaceHomeModificationAssessor",
-      "AIAutomatepharmaceutical",
-      "AIClinicalTrialMatching",
-      "AIDentalLabCaseManager",
-      "AIDentalPracticeManager",
-      "AIDrugInteractionChecker",
-      "AIElderCareCompanion",
-      "AIHIPAATrainingComplianceAuditor",
-      "AIHealthcareBillingOptimizer",
-      "AIHospitalBedResourceOptimizer",
-      "AIIndustrialIoTAnomalyDetector",
-      "AIOptometryAssistant",
-      "AIPathologySlideAnalyzer",
-      "AIPatientTriageforER",
-      "AIPharmacyOperationsManager",
-      "AIPhysicalTherapyMovementAnalyzer",
-      "AIPredictdisease",
-      "AIRemotePatientMonitoring",
-      "AIResearchLiteratureAgent",
-      "AIhomecompanion",
-      "AIpoweredembryo",
-      "ihss_scheduling",
-      "industrial-capabilities-in-space",
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/acceleratedrug",
-      "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged",
-      "healthcare-life-sciences/ambulance-ems-dispatch",
-      "healthcare-life-sciences/coaching-wellness-merged",
-      "healthcare-life-sciences/dental-practice-manager",
-      "healthcare-life-sciences/elder-care-companion",
-      "healthcare-life-sciences/hipaa-training-compliance-auditor",
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector",
-      "healthcare-life-sciences/patient-triagefor-er",
-      "healthcare-life-sciences/pharmacy-operations-manager",
-      "healthcare-life-sciences/physical-therapy-movement-analyzer"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "AIHospitalBedResourceOptimizer",
-        "path": "frontend/src/pages/CustomViewsPage.jsx",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/pharmacy-operations-manager"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIPharmacyOperationsManager",
-        "path": "frontend/src/pages/CustomViewsPage.js",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/pharmacy-operations-manager"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIPatientTriageforER",
-        "path": "frontend/src/pages/CustomViewsPage.js",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/patient-triagefor-er"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIPredictdisease",
-        "path": "frontend/src/pages/CustomViewsPage.js",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/patient-triagefor-er"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIRemotePatientMonitoring",
-        "path": "frontend/src/pages/CustomViewsPage.js",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/patient-triagefor-er"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIDrugInteractionChecker",
-        "path": "frontend/src/pages/CustomViewsPage.js",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/ambulance-ems-dispatch"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIPathologySlideAnalyzer",
-        "path": "frontend/src/pages/CustomViewsPage.js",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/ambulance-ems-dispatch"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIIndustrialIoTAnomalyDetector",
-        "path": "frontend/src/pages/CustomViewsPage.jsx",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIpoweredembryo",
-        "path": "frontend/src/pages/CustomViewsPage.jsx",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/pages/CustomViewsPage.tsx",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/CustomViewsPage.tsx",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIClinicalTrialMatching",
-        "path": "frontend/src/pages/CustomViewsPage.js",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIResearchLiteratureAgent",
-        "path": "frontend/src/pages/CustomViewsPage.js",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIAcceleratedrug",
-        "path": "frontend/src/pages/CustomViewsPage.jsx",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/acceleratedrug"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIAutomatepharmaceutical",
-        "path": "frontend/src/pages/CustomViewsPage.js",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/acceleratedrug"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIAgingInPlaceHomeModificationAssessor",
-        "path": "frontend/src/pages/CustomViewsPage.jsx",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/coaching-wellness-merged"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIhomecompanion",
-        "path": "frontend/src/pages/CustomViewsPage.jsx",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/coaching-wellness-merged"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "ihss_scheduling",
-        "path": "frontend/src/pages/CustomViewsPage.js",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/coaching-wellness-merged"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIElderCareCompanion",
-        "path": "frontend/src/pages/CustomViewsPage.js",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/elder-care-companion"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIOptometryAssistant",
-        "path": "frontend/src/pages/CustomViewsPage.js",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/physical-therapy-movement-analyzer"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIPhysicalTherapyMovementAnalyzer",
-        "path": "frontend/src/pages/CustomViewsPage.jsx",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/physical-therapy-movement-analyzer"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIDentalLabCaseManager",
-        "path": "frontend/src/pages/CustomViewsPage.jsx",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/dental-practice-manager"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIDentalPracticeManager",
-        "path": "frontend/src/pages/CustomViewsPage.js",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/dental-practice-manager"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIHIPAATrainingComplianceAuditor",
-        "path": "frontend/src/pages/CustomViewsPage.jsx",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/hipaa-training-compliance-auditor"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIHealthcareBillingOptimizer",
-        "path": "frontend/src/pages/CustomViewsPage.js",
-        "route": "/CustomViewsPage",
-        "originApp": "healthcare-life-sciences/hipaa-training-compliance-auditor"
       }
     ]
   },
@@ -2079,110 +1293,6 @@
     ]
   },
   {
-    "name": "Data Fusion",
-    "canonicalKey": "data fusion",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/data-fusion"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/aiExtras.ts:45",
-        "route": "/data-fusion",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Data Lineage",
-    "canonicalKey": "data lineage",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/data-lineage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:688",
-        "route": "/data-lineage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Data Quality",
-    "canonicalKey": "data quality",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/data-quality"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/customViews.js:28",
-        "route": "/data-quality",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Data Versioning",
-    "canonicalKey": "data versioning",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "/gap/data-versioning"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:104",
-        "route": "/gap/data-versioning",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
     "name": "Detect",
     "canonicalKey": "detect",
     "aliases": [],
@@ -2209,32 +1319,6 @@
     ]
   },
   {
-    "name": "Diagnose Pipeline",
-    "canonicalKey": "diagnose pipeline",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/diagnose-pipeline"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:224",
-        "route": "/diagnose-pipeline",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
     "name": "Diagnostic Report",
     "canonicalKey": "diagnostic report",
     "aliases": [],
@@ -2256,30 +1340,6 @@
         "sourceProject": "AIpoweredembryo",
         "path": "backend/routes/ehr.js:33",
         "route": "/DiagnosticReport",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Discovery",
-    "canonicalKey": "discovery",
-    "aliases": [],
-    "kinds": [
-      "navigation"
-    ],
-    "routes": [],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:35",
-        "route": "",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -2322,183 +1382,6 @@
         "sourceProject": "AIpoweredembryo",
         "path": "frontend/src/pages/Doctors.jsx",
         "route": "/Doctors",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Document Search Page",
-    "canonicalKey": "document search",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "/DocumentSearchPage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/DocumentSearchPage.tsx",
-        "route": "/DocumentSearchPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Edges",
-    "canonicalKey": "edge",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/edges"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/knowledgeGraph.ts:104",
-        "route": "/edges",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/knowledgeGraph.ts:128",
-        "route": "/edges",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Eln Authoring",
-    "canonicalKey": "authoring eln",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "/gap/eln-authoring"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:103",
-        "route": "/gap/eln-authoring",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Eln Entry",
-    "canonicalKey": "eln entry",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/eln-entry"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:669",
-        "route": "/eln-entry",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Embeddings",
-    "canonicalKey": "embedding",
-    "aliases": [
-      "Embeddings Manager Page"
-    ],
-    "kinds": [
-      "model",
-      "navigation",
-      "page"
-    ],
-    "routes": [
-      "/EmbeddingsManagerPage",
-      "/embeddings"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "model",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/models/Embedding.ts",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:47",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:91",
-        "route": "/embeddings",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:47",
-        "route": "/embeddings",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/Dashboard.tsx:167",
-        "route": "/embeddings",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/EmbeddingsManagerPage.tsx",
-        "route": "/EmbeddingsManagerPage",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -2572,32 +1455,40 @@
     ]
   },
   {
-    "name": "Entities",
+    "name": "Entity",
     "canonicalKey": "entity",
-    "aliases": [
-      "Entity"
-    ],
+    "aliases": [],
     "kinds": [
-      "api",
-      "model",
-      "page"
+      "api"
     ],
     "routes": [
-      "/entities",
       "/export/:entity",
       "/sample-data/:entity",
       "/sample-data/entities"
     ],
     "sourceProjects": [
       "ai-personalized-medicine",
-      "industrial-capabilities-in-space",
-      "tetrascience"
+      "industrial-capabilities-in-space"
     ],
     "consolidatedFromApps": [
       "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged",
       "healthcare-life-sciences/industrial-io-t-anomaly-detector"
     ],
     "evidence": [
+      {
+        "kind": "api",
+        "sourceProject": "ai-personalized-medicine",
+        "path": "backend/routes/sample_data.js:218",
+        "route": "/sample-data/entities",
+        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
+      },
+      {
+        "kind": "api",
+        "sourceProject": "ai-personalized-medicine",
+        "path": "backend/routes/sample_data.js:222",
+        "route": "/sample-data/:entity",
+        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
+      },
       {
         "kind": "api",
         "sourceProject": "industrial-capabilities-in-space",
@@ -2617,84 +1508,6 @@
         "sourceProject": "industrial-capabilities-in-space",
         "path": "backend/routes/utilities.js:39",
         "route": "/export/:entity",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "model",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/models/Entity.ts",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:87",
-        "route": "/entities",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:46",
-        "route": "/entities",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/Dashboard.tsx:127",
-        "route": "/entities",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "ai-personalized-medicine",
-        "path": "backend/routes/sample_data.js:218",
-        "route": "/sample-data/entities",
-        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "ai-personalized-medicine",
-        "path": "backend/routes/sample_data.js:222",
-        "route": "/sample-data/:entity",
-        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
-      }
-    ]
-  },
-  {
-    "name": "Entity Resolution",
-    "canonicalKey": "entity resolution",
-    "aliases": [
-      "Entity Resolution Page"
-    ],
-    "kinds": [
-      "navigation",
-      "page"
-    ],
-    "routes": [
-      "/EntityResolutionPage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:46",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/EntityResolutionPage.tsx",
-        "route": "/EntityResolutionPage",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -2778,189 +1591,6 @@
     ]
   },
   {
-    "name": "Events",
-    "canonicalKey": "event",
-    "aliases": [
-      "Event"
-    ],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/compliance/event",
-      "/compliance/events",
-      "/missions/:id/events"
-    ],
-    "sourceProjects": [
-      "AIPathologySlideAnalyzer",
-      "industrial-capabilities-in-space"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/ambulance-ems-dispatch",
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "AIPathologySlideAnalyzer",
-        "path": "backend/src/extensions.js:281",
-        "route": "/compliance/event",
-        "originApp": "healthcare-life-sciences/ambulance-ems-dispatch"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIPathologySlideAnalyzer",
-        "path": "backend/src/extensions.js:292",
-        "route": "/compliance/events",
-        "originApp": "healthcare-life-sciences/ambulance-ems-dispatch"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "backend/routes/servicing.js:185",
-        "route": "/missions/:id/events",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "backend/routes/servicing.js:197",
-        "route": "/missions/:id/events",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Experiment Recommend",
-    "canonicalKey": "experiment recommend",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/experiment-recommend"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/aiExtras.ts:61",
-        "route": "/experiment-recommend",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Experiment Recommender",
-    "canonicalKey": "experiment recommender",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "/gap/experiment-recommender"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:102",
-        "route": "/gap/experiment-recommender",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Explore Graph",
-    "canonicalKey": "explore graph",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/explore-graph"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:124",
-        "route": "/explore-graph",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "External Db Sync",
-    "canonicalKey": "db external sync",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "/gap/external-db-sync"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:105",
-        "route": "/gap/external-db-sync",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Extract Entities",
-    "canonicalKey": "entity extract",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/extract-entities"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:161",
-        "route": "/extract-entities",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
     "name": "Extraction Plan",
     "canonicalKey": "extraction plan",
     "aliases": [],
@@ -3021,7 +1651,7 @@
   },
   {
     "name": "Gap AI Route Stubs AI Page",
-    "canonicalKey": "ai gap route stubs",
+    "canonicalKey": "ai gap route stub",
     "aliases": [
       "Gap AI Route Stubs AI"
     ],
@@ -3056,119 +1686,8 @@
     ]
   },
   {
-    "name": "Gap Assay Collab Page",
-    "canonicalKey": "assay collab gap",
-    "aliases": [
-      "Gap Assay Collab"
-    ],
-    "kinds": [
-      "api",
-      "page"
-    ],
-    "routes": [
-      "/gap-assay-collab",
-      "/gap/GapAssayCollabPage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/gap-features.ts:101",
-        "route": "/gap-assay-collab",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/gap/GapAssayCollabPage.jsx",
-        "route": "/gap/GapAssayCollabPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Gap Bulk Import Page",
-    "canonicalKey": "bulk gap import",
-    "aliases": [
-      "Gap Bulk Import"
-    ],
-    "kinds": [
-      "api",
-      "page"
-    ],
-    "routes": [
-      "/gap-bulk-import",
-      "/gap/GapBulkImportPage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/gap-features.ts:108",
-        "route": "/gap-bulk-import",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/gap/GapBulkImportPage.jsx",
-        "route": "/gap/GapBulkImportPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Gap Collaboration Suggester Page",
-    "canonicalKey": "collaboration gap suggester",
-    "aliases": [
-      "Gap Collaboration Suggester"
-    ],
-    "kinds": [
-      "api",
-      "page"
-    ],
-    "routes": [
-      "/gap-collaboration-suggester",
-      "/gap/GapCollaborationSuggesterPage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/gap-features.ts:56",
-        "route": "/gap-collaboration-suggester",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/gap/GapCollaborationSuggesterPage.jsx",
-        "route": "/gap/GapCollaborationSuggesterPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
     "name": "Gap Comms Latency Queue",
-    "canonicalKey": "comms gap latency queue",
+    "canonicalKey": "comm gap latency queue",
     "aliases": [],
     "kinds": [
       "page"
@@ -3219,82 +1738,8 @@
     ]
   },
   {
-    "name": "Gap Data Versioning Page",
-    "canonicalKey": "data gap versioning",
-    "aliases": [
-      "Gap Data Versioning"
-    ],
-    "kinds": [
-      "api",
-      "page"
-    ],
-    "routes": [
-      "/gap-data-versioning",
-      "/gap/GapDataVersioningPage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/gap-features.ts:87",
-        "route": "/gap-data-versioning",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/gap/GapDataVersioningPage.jsx",
-        "route": "/gap/GapDataVersioningPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Gap Eln Authoring Page",
-    "canonicalKey": "authoring eln gap",
-    "aliases": [
-      "Gap Eln Authoring"
-    ],
-    "kinds": [
-      "api",
-      "page"
-    ],
-    "routes": [
-      "/gap-eln-authoring",
-      "/gap/GapElnAuthoringPage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/gap-features.ts:80",
-        "route": "/gap-eln-authoring",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/gap/GapElnAuthoringPage.jsx",
-        "route": "/gap/GapElnAuthoringPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
     "name": "Gap Embryos Without Exposed Embryo Page",
-    "canonicalKey": "embryo embryos exposed gap without",
+    "canonicalKey": "embryo exposed gap without",
     "aliases": [
       "Gap Embryos Without Exposed Embryo"
     ],
@@ -3324,80 +1769,6 @@
         "sourceProject": "AIpoweredembryo",
         "path": "frontend/src/pages/GapEmbryosWithoutExposedEmbryoPage.jsx",
         "route": "/GapEmbryosWithoutExposedEmbryoPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Gap Experiment Recommender Page",
-    "canonicalKey": "experiment gap recommender",
-    "aliases": [
-      "Gap Experiment Recommender"
-    ],
-    "kinds": [
-      "api",
-      "page"
-    ],
-    "routes": [
-      "/gap-experiment-recommender",
-      "/gap/GapExperimentRecommenderPage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/gap-features.ts:67",
-        "route": "/gap-experiment-recommender",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/gap/GapExperimentRecommenderPage.jsx",
-        "route": "/gap/GapExperimentRecommenderPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Gap External Db Sync Page",
-    "canonicalKey": "db external gap sync",
-    "aliases": [
-      "Gap External Db Sync"
-    ],
-    "kinds": [
-      "api",
-      "page"
-    ],
-    "routes": [
-      "/gap-external-db-sync",
-      "/gap/GapExternalDbSyncPage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/gap-features.ts:94",
-        "route": "/gap-external-db-sync",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/gap/GapExternalDbSyncPage.jsx",
-        "route": "/gap/GapExternalDbSyncPage",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -3502,7 +1873,7 @@
   },
   {
     "name": "Gap Limited Frontend Pages 15 For 21",
-    "canonicalKey": "15 21 for frontend gap limited pages",
+    "canonicalKey": "15 21 for frontend gap limited page",
     "aliases": [],
     "kinds": [
       "page"
@@ -3590,7 +1961,7 @@
   },
   {
     "name": "Gap Lims And Ehr Modules Exist But Real Adapters Not V Page",
-    "canonicalKey": "adapters and but ehr exist gap lims modules not real v",
+    "canonicalKey": "adapter and but ehr exist gap lims module not real v",
     "aliases": [
       "Gap Lims And Ehr Modules Exist But Real Adapters Not V"
     ],
@@ -3620,43 +1991,6 @@
         "sourceProject": "AIpoweredembryo",
         "path": "frontend/src/pages/GapLimsAndEhrModulesExistButRealAdaptersNotVPage.jsx",
         "route": "/GapLimsAndEhrModulesExistButRealAdaptersNotVPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Gap Literature Mining Page",
-    "canonicalKey": "gap literature mining",
-    "aliases": [
-      "Gap Literature Mining"
-    ],
-    "kinds": [
-      "api",
-      "page"
-    ],
-    "routes": [
-      "/gap-literature-mining",
-      "/gap/GapLiteratureMiningPage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/gap-features.ts:34",
-        "route": "/gap-literature-mining",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/gap/GapLiteratureMiningPage.jsx",
-        "route": "/gap/GapLiteratureMiningPage",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -3850,10 +2184,10 @@
     ]
   },
   {
-    "name": "Gap No Mobile App For Embryologists",
+    "name": "Gap No Mobile App For Embryologists Page",
     "canonicalKey": "embryologist for gap mobile no",
     "aliases": [
-      "Gap No Mobile App For Embryologists Page"
+      "Gap No Mobile App For Embryologists"
     ],
     "kinds": [
       "page"
@@ -3921,7 +2255,7 @@
   },
   {
     "name": "Gap No Notifications Module 0 References",
-    "canonicalKey": "0 gap no notifications reference",
+    "canonicalKey": "0 gap no notification reference",
     "aliases": [],
     "kinds": [
       "page"
@@ -3947,7 +2281,7 @@
   },
   {
     "name": "Gap No Notifications Module0 References",
-    "canonicalKey": "gap module0 no notifications reference",
+    "canonicalKey": "gap module0 no notification reference",
     "aliases": [],
     "kinds": [
       "page"
@@ -4142,10 +2476,10 @@
     ]
   },
   {
-    "name": "Gap No Webhooks For Lab Events",
+    "name": "Gap No Webhooks For Lab Events Page",
     "canonicalKey": "event for gap lab no webhook",
     "aliases": [
-      "Gap No Webhooks For Lab Events Page"
+      "Gap No Webhooks For Lab Events"
     ],
     "kinds": [
       "page"
@@ -4213,7 +2547,7 @@
   },
   {
     "name": "Gap Orbital Mechanics Routing",
-    "canonicalKey": "gap mechanics orbital routing",
+    "canonicalKey": "gap mechanic orbital routing",
     "aliases": [],
     "kinds": [
       "page"
@@ -4316,80 +2650,6 @@
     ]
   },
   {
-    "name": "Gap Regulatory Submission Page",
-    "canonicalKey": "gap regulatory submission",
-    "aliases": [
-      "Gap Regulatory Submission"
-    ],
-    "kinds": [
-      "api",
-      "page"
-    ],
-    "routes": [
-      "/gap-regulatory-submission",
-      "/gap/GapRegulatorySubmissionPage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/gap-features.ts:115",
-        "route": "/gap-regulatory-submission",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/gap/GapRegulatorySubmissionPage.jsx",
-        "route": "/gap/GapRegulatorySubmissionPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Gap Similar Compounds Page",
-    "canonicalKey": "compound gap similar",
-    "aliases": [
-      "Gap Similar Compounds"
-    ],
-    "kinds": [
-      "api",
-      "page"
-    ],
-    "routes": [
-      "/gap-similar-compounds",
-      "/gap/GapSimilarCompoundsPage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/gap-features.ts:45",
-        "route": "/gap-similar-compounds",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/gap/GapSimilarCompoundsPage.jsx",
-        "route": "/gap/GapSimilarCompoundsPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
     "name": "Gap Simulation Twin",
     "canonicalKey": "gap simulation twin",
     "aliases": [],
@@ -4411,32 +2671,6 @@
         "sourceProject": "industrial-capabilities-in-space",
         "path": "frontend/src/pages/GapSimulationTwin.tsx",
         "route": "/GapSimulationTwin",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Generate Embedding Description",
-    "canonicalKey": "description embedding generate",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/generate-embedding-description"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:306",
-        "route": "/generate-embedding-description",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -4588,7 +2822,7 @@
       {
         "kind": "api",
         "sourceProject": "AIIndustrialIoTAnomalyDetector",
-        "path": "backend/server.js:46",
+        "path": "backend/server.js:47",
         "route": "/api/health-check",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
@@ -4647,18 +2881,65 @@
     ]
   },
   {
-    "name": "Instruments",
-    "canonicalKey": "instrument",
-    "aliases": [
-      "Instrument Manager Page"
-    ],
+    "name": "Ingestions",
+    "canonicalKey": "ingestion",
+    "aliases": [],
     "kinds": [
-      "model",
-      "navigation",
-      "page"
+      "api"
     ],
     "routes": [
-      "/InstrumentManagerPage",
+      "/ingestions"
+    ],
+    "sourceProjects": [
+      "tetrascience"
+    ],
+    "consolidatedFromApps": [
+      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+    ],
+    "evidence": [
+      {
+        "kind": "api",
+        "sourceProject": "tetrascience",
+        "path": "backend/src/routes/assayWorkflow.ts:11",
+        "route": "/ingestions",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      }
+    ]
+  },
+  {
+    "name": "Inspection",
+    "canonicalKey": "inspection",
+    "aliases": [],
+    "kinds": [
+      "api"
+    ],
+    "routes": [
+      "/work-orders/:id/inspection"
+    ],
+    "sourceProjects": [
+      "industrial-capabilities-in-space"
+    ],
+    "consolidatedFromApps": [
+      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+    ],
+    "evidence": [
+      {
+        "kind": "api",
+        "sourceProject": "industrial-capabilities-in-space",
+        "path": "backend/routes/manufacturing.js:430",
+        "route": "/work-orders/:id/inspection",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      }
+    ]
+  },
+  {
+    "name": "Instruments",
+    "canonicalKey": "instrument",
+    "aliases": [],
+    "kinds": [
+      "api"
+    ],
+    "routes": [
       "/instruments"
     ],
     "sourceProjects": [
@@ -4669,95 +2950,36 @@
     ],
     "evidence": [
       {
-        "kind": "page",
+        "kind": "api",
         "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/InstrumentManagerPage.tsx",
-        "route": "/InstrumentManagerPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "model",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/models/Instrument.ts",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:54",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:89",
-        "route": "/instruments",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:54",
-        "route": "/instruments",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/Dashboard.tsx:147",
+        "path": "backend/src/routes/assayWorkflow.ts:8",
         "route": "/instruments",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
   },
   {
-    "name": "Intelligence",
-    "canonicalKey": "intelligence",
+    "name": "Integration Runs",
+    "canonicalKey": "integration runs",
     "aliases": [],
     "kinds": [
-      "navigation"
-    ],
-    "routes": [],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:43",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Isru Cert Pipeline",
-    "canonicalKey": "cert isru pipeline",
-    "aliases": [],
-    "kinds": [
-      "page"
+      "api"
     ],
     "routes": [
-      "cf/isru-cert-pipeline"
+      "/integration-runs"
     ],
     "sourceProjects": [
-      "industrial-capabilities-in-space"
+      "AIIndustrialIoTAnomalyDetector"
     ],
     "consolidatedFromApps": [
       "healthcare-life-sciences/industrial-io-t-anomaly-detector"
     ],
     "evidence": [
       {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:90",
-        "route": "cf/isru-cert-pipeline",
+        "kind": "api",
+        "sourceProject": "AIIndustrialIoTAnomalyDetector",
+        "path": "backend/routes/governedIoT.js:6",
+        "route": "/integration-runs",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -4765,15 +2987,12 @@
   {
     "name": "Isru Page",
     "canonicalKey": "isru",
-    "aliases": [
-      "Isru"
-    ],
+    "aliases": [],
     "kinds": [
       "page"
     ],
     "routes": [
-      "/IsruPage",
-      "isru"
+      "/IsruPage"
     ],
     "sourceProjects": [
       "industrial-capabilities-in-space"
@@ -4782,150 +3001,11 @@
       "healthcare-life-sciences/industrial-io-t-anomaly-detector"
     ],
     "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:69",
-        "route": "isru",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
       {
         "kind": "page",
         "sourceProject": "industrial-capabilities-in-space",
         "path": "frontend/src/pages/IsruPage.tsx",
         "route": "/IsruPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Isru Yield",
-    "canonicalKey": "isru yield",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "gap/isru-yield"
-    ],
-    "sourceProjects": [
-      "industrial-capabilities-in-space"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:84",
-        "route": "gap/isru-yield",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Knowledge Edge",
-    "canonicalKey": "edge knowledge",
-    "aliases": [],
-    "kinds": [
-      "model"
-    ],
-    "routes": [],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "model",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/models/KnowledgeEdge.ts",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Knowledge Graph",
-    "canonicalKey": "graph knowledge",
-    "aliases": [
-      "Knowledge Graph Page"
-    ],
-    "kinds": [
-      "navigation",
-      "page"
-    ],
-    "routes": [
-      "/KnowledgeGraphPage",
-      "/knowledge-graph"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:45",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:86",
-        "route": "/knowledge-graph",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:45",
-        "route": "/knowledge-graph",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/Dashboard.tsx:117",
-        "route": "/knowledge-graph",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/KnowledgeGraphPage.tsx",
-        "route": "/KnowledgeGraphPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Knowledge Node",
-    "canonicalKey": "knowledge node",
-    "aliases": [],
-    "kinds": [
-      "model"
-    ],
-    "routes": [],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "model",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/models/KnowledgeNode.ts",
-        "route": "",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -5016,6 +3096,20 @@
     "evidence": [
       {
         "kind": "page",
+        "sourceProject": "ai-personalized-medicine",
+        "path": "frontend/src/App.tsx:75",
+        "route": "/lab-results",
+        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
+      },
+      {
+        "kind": "page",
+        "sourceProject": "ai-personalized-medicine",
+        "path": "frontend/src/components/Layout.tsx:11",
+        "route": "/lab-results",
+        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
+      },
+      {
+        "kind": "page",
         "sourceProject": "AIpoweredembryo",
         "path": "frontend/src/App.jsx:66",
         "route": "lab-results",
@@ -5029,20 +3123,6 @@
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       },
       {
-        "kind": "page",
-        "sourceProject": "ai-personalized-medicine",
-        "path": "frontend/src/App.tsx:70",
-        "route": "/lab-results",
-        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "ai-personalized-medicine",
-        "path": "frontend/src/components/Layout.tsx:10",
-        "route": "/lab-results",
-        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
-      },
-      {
         "kind": "navigation",
         "sourceProject": "AIVeterinaryClinicManager",
         "path": "client/src/components/Sidebar.jsx:14",
@@ -5052,48 +3132,14 @@
     ]
   },
   {
-    "name": "Lab Views",
-    "canonicalKey": "lab",
-    "aliases": [],
-    "kinds": [
-      "navigation"
-    ],
-    "routes": [],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:66",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:68",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Launch Economics",
+    "name": "Launch Economics Page",
     "canonicalKey": "economic launch",
-    "aliases": [
-      "Launch Economics Page"
-    ],
+    "aliases": [],
     "kinds": [
       "page"
     ],
     "routes": [
-      "/LaunchEconomicsPage",
-      "launch-economics"
+      "/LaunchEconomicsPage"
     ],
     "sourceProjects": [
       "industrial-capabilities-in-space"
@@ -5102,157 +3148,11 @@
       "healthcare-life-sciences/industrial-io-t-anomaly-detector"
     ],
     "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:70",
-        "route": "launch-economics",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
       {
         "kind": "page",
         "sourceProject": "industrial-capabilities-in-space",
         "path": "frontend/src/pages/LaunchEconomicsPage.tsx",
         "route": "/LaunchEconomicsPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Literature Mine",
-    "canonicalKey": "literature mine",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/literature-mine"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/aiExtras.ts:15",
-        "route": "/literature-mine",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Literature Mining",
-    "canonicalKey": "literature mining",
-    "aliases": [],
-    "kinds": [
-      "api",
-      "page"
-    ],
-    "routes": [
-      "/gap/literature-mining",
-      "/literature-mining"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:471",
-        "route": "/literature-mining",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:99",
-        "route": "/gap/literature-mining",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Lunar Hibernation",
-    "canonicalKey": "hibernation lunar",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "cf/lunar-hibernation"
-    ],
-    "sourceProjects": [
-      "industrial-capabilities-in-space"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:87",
-        "route": "cf/lunar-hibernation",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Lunar Marketplace",
-    "canonicalKey": "lunar marketplace",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "cf/lunar-marketplace"
-    ],
-    "sourceProjects": [
-      "industrial-capabilities-in-space"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:88",
-        "route": "cf/lunar-marketplace",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Lunar Night Power",
-    "canonicalKey": "lunar night power",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "gap/lunar-night-power"
-    ],
-    "sourceProjects": [
-      "industrial-capabilities-in-space"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:77",
-        "route": "gap/lunar-night-power",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -5303,17 +3203,14 @@
     ]
   },
   {
-    "name": "Microgravity Products",
-    "canonicalKey": "microgravity product",
-    "aliases": [
-      "Microgravity Products Page"
-    ],
+    "name": "Manufacturing Readiness",
+    "canonicalKey": "manufacturing readiness",
+    "aliases": [],
     "kinds": [
-      "page"
+      "api"
     ],
     "routes": [
-      "/MicrogravityProductsPage",
-      "microgravity-products"
+      "/manufacturing-readiness"
     ],
     "sourceProjects": [
       "industrial-capabilities-in-space"
@@ -5323,12 +3220,64 @@
     ],
     "evidence": [
       {
-        "kind": "page",
+        "kind": "api",
         "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:71",
-        "route": "microgravity-products",
+        "path": "backend/routes/runtimeAi.js:6",
+        "route": "/manufacturing-readiness",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      }
+    ]
+  },
+  {
+    "name": "Material Lots",
+    "canonicalKey": "lots material",
+    "aliases": [],
+    "kinds": [
+      "api"
+    ],
+    "routes": [
+      "/material-lots"
+    ],
+    "sourceProjects": [
+      "industrial-capabilities-in-space"
+    ],
+    "consolidatedFromApps": [
+      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+    ],
+    "evidence": [
+      {
+        "kind": "api",
+        "sourceProject": "industrial-capabilities-in-space",
+        "path": "backend/routes/manufacturing.js:139",
+        "route": "/material-lots",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       },
+      {
+        "kind": "api",
+        "sourceProject": "industrial-capabilities-in-space",
+        "path": "backend/routes/manufacturing.js:153",
+        "route": "/material-lots",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      }
+    ]
+  },
+  {
+    "name": "Microgravity Products Page",
+    "canonicalKey": "microgravity product",
+    "aliases": [],
+    "kinds": [
+      "page"
+    ],
+    "routes": [
+      "/MicrogravityProductsPage"
+    ],
+    "sourceProjects": [
+      "industrial-capabilities-in-space"
+    ],
+    "consolidatedFromApps": [
+      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+    ],
+    "evidence": [
       {
         "kind": "page",
         "sourceProject": "industrial-capabilities-in-space",
@@ -5341,15 +3290,12 @@
   {
     "name": "Mining Page",
     "canonicalKey": "mining",
-    "aliases": [
-      "Mining"
-    ],
+    "aliases": [],
     "kinds": [
       "page"
     ],
     "routes": [
-      "/MiningPage",
-      "mining"
+      "/MiningPage"
     ],
     "sourceProjects": [
       "industrial-capabilities-in-space"
@@ -5358,13 +3304,6 @@
       "healthcare-life-sciences/industrial-io-t-anomaly-detector"
     ],
     "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:59",
-        "route": "mining",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
       {
         "kind": "page",
         "sourceProject": "industrial-capabilities-in-space",
@@ -5427,36 +3366,10 @@
     ]
   },
   {
-    "name": "Mission Video Stream",
-    "canonicalKey": "mission stream video",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "gap/mission-video-stream"
-    ],
-    "sourceProjects": [
-      "industrial-capabilities-in-space"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:83",
-        "route": "gap/mission-video-stream",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Missions",
+    "name": "Missions Page",
     "canonicalKey": "mission",
     "aliases": [
-      "Missions Page"
+      "Missions"
     ],
     "kinds": [
       "api",
@@ -5464,8 +3377,7 @@
     ],
     "routes": [
       "/MissionsPage",
-      "/missions",
-      "missions"
+      "/missions"
     ],
     "sourceProjects": [
       "industrial-capabilities-in-space"
@@ -5491,13 +3403,6 @@
       {
         "kind": "page",
         "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:63",
-        "route": "missions",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
         "path": "frontend/src/pages/MissionsPage.tsx",
         "route": "/MissionsPage",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
@@ -5505,486 +3410,14 @@
     ]
   },
   {
-    "name": "Molecular Search Page",
-    "canonicalKey": "molecular search",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "/MolecularSearchPage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/MolecularSearchPage.tsx",
-        "route": "/MolecularSearchPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Molecules",
-    "canonicalKey": "molecule",
-    "aliases": [],
-    "kinds": [
-      "api",
-      "model",
-      "navigation",
-      "page"
-    ],
-    "routes": [
-      "/molecules"
-    ],
-    "sourceProjects": [
-      "AIAcceleratedrug",
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/acceleratedrug",
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "model",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/models/Molecule.ts",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:37",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:83",
-        "route": "/molecules",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:37",
-        "route": "/molecules",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/Dashboard.tsx:87",
-        "route": "/molecules",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIAcceleratedrug",
-        "path": "backend/src/routes/customViews.js:188",
-        "route": "/molecules",
-        "originApp": "healthcare-life-sciences/acceleratedrug"
-      }
-    ]
-  },
-  {
-    "name": "Multi Modal Data Fusion",
-    "canonicalKey": "data fusion modal multi",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/multi-modal-data-fusion"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:538",
-        "route": "/multi-modal-data-fusion",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Nodes",
-    "canonicalKey": "node",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/nodes"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/knowledgeGraph.ts:11",
-        "route": "/nodes",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/knowledgeGraph.ts:54",
-        "route": "/nodes",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Operations",
-    "canonicalKey": "operation",
-    "aliases": [],
-    "kinds": [
-      "navigation",
-      "page"
-    ],
-    "routes": [
-      "/codex/operations"
-    ],
-    "sourceProjects": [
-      "AIAcceleratedrug",
-      "AIAgingInPlaceHomeModificationAssessor",
-      "AIAmbulanceEMSDispatch",
-      "AIAutomatepharmaceutical",
-      "AIClinicalTrialMatching",
-      "AIDentalPracticeManager",
-      "AIDrugInteractionChecker",
-      "AIElderCareCompanion",
-      "AIHIPAATrainingComplianceAuditor",
-      "AIHealthcareBillingOptimizer",
-      "AIHealthcareCompanion",
-      "AIHospitalBedResourceOptimizer",
-      "AIIndustrialIoTAnomalyDetector",
-      "AIMedicalDeviceComplianceManager",
-      "AIMentalHealthCompanion",
-      "AIOptometryAssistant",
-      "AIPathologySlideAnalyzer",
-      "AIPatientTriageforER",
-      "AIPharmacyOperationsManager",
-      "AIPhysicalTherapyMovementAnalyzer",
-      "AIPrecisionFermentationProcessOptimizer",
-      "AIPredictdisease",
-      "AIRemotePatientMonitoring",
-      "AIVeterinaryClinicManager",
-      "AIhomecompanion",
-      "AIpoweredembryo",
-      "ai-personalized-medicine",
-      "coaching-wellness",
-      "healthcare",
-      "ihss_scheduling",
-      "industrial-capabilities-in-space",
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/acceleratedrug",
-      "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged",
-      "healthcare-life-sciences/ambulance-ems-dispatch",
-      "healthcare-life-sciences/coaching-wellness-merged",
-      "healthcare-life-sciences/dental-practice-manager",
-      "healthcare-life-sciences/elder-care-companion",
-      "healthcare-life-sciences/hipaa-training-compliance-auditor",
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector",
-      "healthcare-life-sciences/patient-triagefor-er",
-      "healthcare-life-sciences/pharmacy-operations-manager",
-      "healthcare-life-sciences/physical-therapy-movement-analyzer"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "AIHospitalBedResourceOptimizer",
-        "path": "frontend/src/App.js:38",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/pharmacy-operations-manager"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIPharmacyOperationsManager",
-        "path": "frontend/src/App.js:102",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/pharmacy-operations-manager"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIHealthcareCompanion",
-        "path": "client/src/App.jsx:80",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/patient-triagefor-er"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIPatientTriageforER",
-        "path": "frontend/src/App.js:93",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/patient-triagefor-er"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIPredictdisease",
-        "path": "frontend/src/App.jsx:57",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/patient-triagefor-er"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIRemotePatientMonitoring",
-        "path": "frontend/src/App.jsx:57",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/patient-triagefor-er"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIAmbulanceEMSDispatch",
-        "path": "client/src/App.jsx:202",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/ambulance-ems-dispatch"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIDrugInteractionChecker",
-        "path": "frontend/src/App.js:58",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/ambulance-ems-dispatch"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIPathologySlideAnalyzer",
-        "path": "frontend/src/App.js:118",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/ambulance-ems-dispatch"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIIndustrialIoTAnomalyDetector",
-        "path": "frontend/src/App.jsx:66",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIpoweredembryo",
-        "path": "frontend/src/App.jsx:55",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:52",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:51",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:80",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIClinicalTrialMatching",
-        "path": "frontend/src/App.js:126",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "ai-personalized-medicine",
-        "path": "frontend/src/App.tsx:57",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIAcceleratedrug",
-        "path": "frontend/src/App.jsx:531",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/acceleratedrug"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIAutomatepharmaceutical",
-        "path": "frontend/src/App.js:59",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/acceleratedrug"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIPrecisionFermentationProcessOptimizer",
-        "path": "client/src/App.jsx:100",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/acceleratedrug"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIAgingInPlaceHomeModificationAssessor",
-        "path": "frontend/src/App.jsx:26",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/coaching-wellness-merged"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIhomecompanion",
-        "path": "frontend/src/App.jsx:59",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/coaching-wellness-merged"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "coaching-wellness",
-        "path": "src/app/codex/operations/page.tsx",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/coaching-wellness-merged"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "ihss_scheduling",
-        "path": "frontend/src/App.js:120",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/coaching-wellness-merged"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIElderCareCompanion",
-        "path": "frontend/src/App.js:52",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/elder-care-companion"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIMentalHealthCompanion",
-        "path": "client/src/App.jsx:43",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/elder-care-companion"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIOptometryAssistant",
-        "path": "frontend/src/App.jsx:2904",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/physical-therapy-movement-analyzer"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIPhysicalTherapyMovementAnalyzer",
-        "path": "frontend/src/App.jsx:69",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/physical-therapy-movement-analyzer"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIVeterinaryClinicManager",
-        "path": "client/src/App.jsx:91",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/physical-therapy-movement-analyzer"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIDentalPracticeManager",
-        "path": "frontend/src/App.js:130",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/dental-practice-manager"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIHIPAATrainingComplianceAuditor",
-        "path": "frontend/src/App.jsx:1630",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/hipaa-training-compliance-auditor"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIHealthcareBillingOptimizer",
-        "path": "frontend/src/App.js:91",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/hipaa-training-compliance-auditor"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "AIMedicalDeviceComplianceManager",
-        "path": "client/src/App.jsx:300",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/hipaa-training-compliance-auditor"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "healthcare",
-        "path": "src/app/codex/operations/page.tsx",
-        "route": "/codex/operations",
-        "originApp": "healthcare-life-sciences/hipaa-training-compliance-auditor"
-      }
-    ]
-  },
-  {
-    "name": "Orbital Mechanics Routing",
-    "canonicalKey": "mechanics orbital routing",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "gap/orbital-mechanics-routing"
-    ],
-    "sourceProjects": [
-      "industrial-capabilities-in-space"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:78",
-        "route": "gap/orbital-mechanics-routing",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Orbital Platforms",
+    "name": "Orbital Platforms Page",
     "canonicalKey": "orbital platform",
-    "aliases": [
-      "Orbital Platforms Page"
-    ],
+    "aliases": [],
     "kinds": [
       "page"
     ],
     "routes": [
-      "/OrbitalPlatformsPage",
-      "orbital-platforms"
+      "/OrbitalPlatformsPage"
     ],
     "sourceProjects": [
       "industrial-capabilities-in-space"
@@ -5993,192 +3426,12 @@
       "healthcare-life-sciences/industrial-io-t-anomaly-detector"
     ],
     "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:68",
-        "route": "orbital-platforms",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
       {
         "kind": "page",
         "sourceProject": "industrial-capabilities-in-space",
         "path": "frontend/src/pages/OrbitalPlatformsPage.tsx",
         "route": "/OrbitalPlatformsPage",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Overview",
-    "canonicalKey": "overview",
-    "aliases": [],
-    "kinds": [
-      "api",
-      "navigation"
-    ],
-    "routes": [
-      "/overview"
-    ],
-    "sourceProjects": [
-      "AIPhysicalTherapyMovementAnalyzer",
-      "AIPrecisionFermentationProcessOptimizer",
-      "AIVeterinaryClinicManager",
-      "healthcare",
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/acceleratedrug",
-      "healthcare-life-sciences/hipaa-training-compliance-auditor",
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector",
-      "healthcare-life-sciences/physical-therapy-movement-analyzer"
-    ],
-    "evidence": [
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:29",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "navigation",
-        "sourceProject": "AIPrecisionFermentationProcessOptimizer",
-        "path": "client/src/components/Sidebar.jsx:29",
-        "route": "",
-        "originApp": "healthcare-life-sciences/acceleratedrug"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIPhysicalTherapyMovementAnalyzer",
-        "path": "backend/routes/reports.js:6",
-        "route": "/overview",
-        "originApp": "healthcare-life-sciences/physical-therapy-movement-analyzer"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIVeterinaryClinicManager",
-        "path": "server/routes/reports.js:8",
-        "route": "/overview",
-        "originApp": "healthcare-life-sciences/physical-therapy-movement-analyzer"
-      },
-      {
-        "kind": "navigation",
-        "sourceProject": "healthcare",
-        "path": "src/components/layout/Sidebar.tsx:72",
-        "route": "",
-        "originApp": "healthcare-life-sciences/hipaa-training-compliance-auditor"
-      }
-    ]
-  },
-  {
-    "name": "Pipeline Monitor Page",
-    "canonicalKey": "monitor pipeline",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "/PipelineMonitorPage"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/PipelineMonitorPage.tsx",
-        "route": "/PipelineMonitorPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Pipelines",
-    "canonicalKey": "pipeline",
-    "aliases": [
-      "Pipeline"
-    ],
-    "kinds": [
-      "api",
-      "model",
-      "navigation",
-      "page"
-    ],
-    "routes": [
-      "/pipeline",
-      "/pipelines"
-    ],
-    "sourceProjects": [
-      "AIAcceleratedrug",
-      "AIResearchLiteratureAgent",
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/acceleratedrug",
-      "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged",
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "model",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/models/Pipeline.ts",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:53",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:88",
-        "route": "/pipelines",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:53",
-        "route": "/pipelines",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/Dashboard.tsx:137",
-        "route": "/pipelines",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIResearchLiteratureAgent",
-        "path": "backend/routes/agents.js:49",
-        "route": "/pipeline",
-        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIAcceleratedrug",
-        "path": "backend/src/routes/customViews.js:56",
-        "route": "/pipeline",
-        "originApp": "healthcare-life-sciences/acceleratedrug"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIAcceleratedrug",
-        "path": "backend/src/routes/drugCandidates.js:47",
-        "route": "/pipeline",
-        "originApp": "healthcare-life-sciences/acceleratedrug"
       }
     ]
   },
@@ -6289,32 +3542,6 @@
     ]
   },
   {
-    "name": "Print Cad Upload",
-    "canonicalKey": "cad print upload",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "gap/print-cad-upload"
-    ],
-    "sourceProjects": [
-      "industrial-capabilities-in-space"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:85",
-        "route": "gap/print-cad-upload",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
     "name": "Print Jobs Page",
     "canonicalKey": "jobs print",
     "aliases": [
@@ -6337,7 +3564,7 @@
       {
         "kind": "page",
         "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:61",
+        "path": "frontend/src/App.tsx:17",
         "route": "print_jobs",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       },
@@ -6346,32 +3573,6 @@
         "sourceProject": "industrial-capabilities-in-space",
         "path": "frontend/src/pages/PrintJobsPage.tsx",
         "route": "/PrintJobsPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Print Quality Predictor",
-    "canonicalKey": "predictor print quality",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "gap/print-quality-predictor"
-    ],
-    "sourceProjects": [
-      "industrial-capabilities-in-space"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:79",
-        "route": "gap/print-quality-predictor",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -6481,74 +3682,6 @@
     ]
   },
   {
-    "name": "Pubchem Lookup",
-    "canonicalKey": "lookup pubchem",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/pubchem-lookup"
-    ],
-    "sourceProjects": [
-      "AIAcceleratedrug",
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/acceleratedrug",
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:765",
-        "route": "/pubchem-lookup",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIAcceleratedrug",
-        "path": "backend/src/routes/ai.js:1271",
-        "route": "/pubchem-lookup",
-        "originApp": "healthcare-life-sciences/acceleratedrug"
-      }
-    ]
-  },
-  {
-    "name": "Publication Readiness",
-    "canonicalKey": "publication readiness",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/publication-readiness"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:744",
-        "route": "/publication-readiness",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/aiExtras.ts:75",
-        "route": "/publication-readiness",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
     "name": "Publish",
     "canonicalKey": "publish",
     "aliases": [],
@@ -6575,6 +3708,32 @@
     ]
   },
   {
+    "name": "Purge",
+    "canonicalKey": "purge",
+    "aliases": [],
+    "kinds": [
+      "api"
+    ],
+    "routes": [
+      "/retention/purge"
+    ],
+    "sourceProjects": [
+      "AIpoweredembryo"
+    ],
+    "consolidatedFromApps": [
+      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+    ],
+    "evidence": [
+      {
+        "kind": "api",
+        "sourceProject": "AIpoweredembryo",
+        "path": "backend/routes/authoritative.js:14",
+        "route": "/retention/purge",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      }
+    ]
+  },
+  {
     "name": "Reading",
     "canonicalKey": "reading",
     "aliases": [],
@@ -6596,6 +3755,42 @@
         "sourceProject": "AIIndustrialIoTAnomalyDetector",
         "path": "backend/routes/sensors.js:46",
         "route": "/:id/reading",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      }
+    ]
+  },
+  {
+    "name": "Ready",
+    "canonicalKey": "ready",
+    "aliases": [],
+    "kinds": [
+      "api"
+    ],
+    "routes": [
+      "/api/ready",
+      "/health/ready"
+    ],
+    "sourceProjects": [
+      "ai-personalized-medicine",
+      "tetrascience"
+    ],
+    "consolidatedFromApps": [
+      "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged",
+      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+    ],
+    "evidence": [
+      {
+        "kind": "api",
+        "sourceProject": "ai-personalized-medicine",
+        "path": "backend/server.js:33",
+        "route": "/health/ready",
+        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
+      },
+      {
+        "kind": "api",
+        "sourceProject": "tetrascience",
+        "path": "backend/src/index.ts:21",
+        "route": "/api/ready",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -6662,66 +3857,14 @@
     ]
   },
   {
-    "name": "Regolith Electrolysis",
-    "canonicalKey": "electrolysis regolith",
+    "name": "Release",
+    "canonicalKey": "release",
     "aliases": [],
     "kinds": [
-      "page"
+      "api"
     ],
     "routes": [
-      "cf/regolith-electrolysis"
-    ],
-    "sourceProjects": [
-      "industrial-capabilities-in-space"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:86",
-        "route": "cf/regolith-electrolysis",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Regolith Process Optimizer",
-    "canonicalKey": "optimizer process regolith",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "gap/regolith-process-optimizer"
-    ],
-    "sourceProjects": [
-      "industrial-capabilities-in-space"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:76",
-        "route": "gap/regolith-process-optimizer",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Regulatory Submission",
-    "canonicalKey": "regulatory submission",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "/gap/regulatory-submission"
+      "/runs/:id/release"
     ],
     "sourceProjects": [
       "tetrascience"
@@ -6731,10 +3874,10 @@
     ],
     "evidence": [
       {
-        "kind": "page",
+        "kind": "api",
         "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:108",
-        "route": "/gap/regulatory-submission",
+        "path": "backend/src/routes/assayWorkflow.ts:13",
+        "route": "/runs/:id/release",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -6766,57 +3909,6 @@
     ]
   },
   {
-    "name": "Research Ops",
-    "canonicalKey": "ops research",
-    "aliases": [
-      "Research Ops Page"
-    ],
-    "kinds": [
-      "navigation",
-      "page"
-    ],
-    "routes": [
-      "/ResearchOpsPage",
-      "/research-ops"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:62",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:96",
-        "route": "/research-ops",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:62",
-        "route": "/research-ops",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/ResearchOpsPage.tsx",
-        "route": "/ResearchOpsPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
     "name": "Resource Valuation",
     "canonicalKey": "resource valuation",
     "aliases": [],
@@ -6838,32 +3930,6 @@
         "sourceProject": "industrial-capabilities-in-space",
         "path": "backend/routes/ai.js:35",
         "route": "/resource-valuation",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Resources Page",
-    "canonicalKey": "resources",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "/ResourcesPage"
-    ],
-    "sourceProjects": [
-      "industrial-capabilities-in-space"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/pages/ResourcesPage.tsx",
-        "route": "/ResourcesPage",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -6895,32 +3961,6 @@
     ]
   },
   {
-    "name": "Revoke",
-    "canonicalKey": "revoke",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/:id/revoke"
-    ],
-    "sourceProjects": [
-      "AIpoweredembryo"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "AIpoweredembryo",
-        "path": "backend/routes/consent.js:75",
-        "route": "/:id/revoke",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
     "name": "Roi",
     "canonicalKey": "roi",
     "aliases": [],
@@ -6942,59 +3982,6 @@
         "sourceProject": "industrial-capabilities-in-space",
         "path": "backend/routes/microgravity-products.js:170",
         "route": "/:id/roi",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Roles",
-    "canonicalKey": "role",
-    "aliases": [
-      "Role"
-    ],
-    "kinds": [
-      "api",
-      "model"
-    ],
-    "routes": [
-      "/roles",
-      "/users/:id/role"
-    ],
-    "sourceProjects": [
-      "AIHealthcareCompanion",
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector",
-      "healthcare-life-sciences/patient-triagefor-er"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "AIHealthcareCompanion",
-        "path": "server/routes/admin.js:52",
-        "route": "/users/:id/role",
-        "originApp": "healthcare-life-sciences/patient-triagefor-er"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/users.ts:10",
-        "route": "/roles",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/users.ts:20",
-        "route": "/roles",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "model",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/models/Role.ts",
-        "route": "",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -7079,6 +4066,13 @@
     "evidence": [
       {
         "kind": "api",
+        "sourceProject": "ai-personalized-medicine",
+        "path": "backend/routes/pgx-cpic.js:73",
+        "route": "/rules",
+        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
+      },
+      {
+        "kind": "api",
         "sourceProject": "AIIndustrialIoTAnomalyDetector",
         "path": "backend/routes/customViews.js:275",
         "route": "/rules",
@@ -7090,13 +4084,6 @@
         "path": "backend/routes/customViews.js:279",
         "route": "/rules",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "ai-personalized-medicine",
-        "path": "backend/routes/pgx-cpic.js:73",
-        "route": "/rules",
-        "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
       }
     ]
   },
@@ -7108,12 +4095,15 @@
       "api"
     ],
     "routes": [
+      "/integrations/runs",
       "/sites/:id/runs"
     ],
     "sourceProjects": [
+      "AIDentalLabCaseManager",
       "industrial-capabilities-in-space"
     ],
     "consolidatedFromApps": [
+      "healthcare-life-sciences/dental-practice-manager",
       "healthcare-life-sciences/industrial-io-t-anomaly-detector"
     ],
     "evidence": [
@@ -7130,18 +4120,25 @@
         "path": "backend/routes/isru.js:211",
         "route": "/sites/:id/runs",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      },
+      {
+        "kind": "api",
+        "sourceProject": "AIDentalLabCaseManager",
+        "path": "backend/routes/governedWorkflow.js:149",
+        "route": "/integrations/runs",
+        "originApp": "healthcare-life-sciences/dental-practice-manager"
       }
     ]
   },
   {
-    "name": "Sample Barcodes",
-    "canonicalKey": "barcode sample",
+    "name": "Samples",
+    "canonicalKey": "sample",
     "aliases": [],
     "kinds": [
       "api"
     ],
     "routes": [
-      "/sample-barcodes"
+      "/samples"
     ],
     "sourceProjects": [
       "tetrascience"
@@ -7153,116 +4150,8 @@
       {
         "kind": "api",
         "sourceProject": "tetrascience",
-        "path": "backend/src/routes/customViews.js:61",
-        "route": "/sample-barcodes",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Sample Workflow",
-    "canonicalKey": "sample workflow",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/sample-workflow"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/customViews.js:13",
-        "route": "/sample-workflow",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Search Analytics",
-    "canonicalKey": "analytic search",
-    "aliases": [
-      "Search Analytics Page"
-    ],
-    "kinds": [
-      "navigation",
-      "page"
-    ],
-    "routes": [
-      "/SearchAnalyticsPage",
-      "/search-analytics"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:55",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:90",
-        "route": "/search-analytics",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:55",
-        "route": "/search-analytics",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/Dashboard.tsx:157",
-        "route": "/search-analytics",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/SearchAnalyticsPage.tsx",
-        "route": "/SearchAnalyticsPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Search Query",
-    "canonicalKey": "query search",
-    "aliases": [],
-    "kinds": [
-      "model"
-    ],
-    "routes": [],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "model",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/models/SearchQuery.ts",
-        "route": "",
+        "path": "backend/src/routes/assayWorkflow.ts:10",
+        "route": "/samples",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -7348,15 +4237,12 @@
   {
     "name": "Servicing Page",
     "canonicalKey": "servicing",
-    "aliases": [
-      "Servicing"
-    ],
+    "aliases": [],
     "kinds": [
       "page"
     ],
     "routes": [
-      "/ServicingPage",
-      "servicing"
+      "/ServicingPage"
     ],
     "sourceProjects": [
       "industrial-capabilities-in-space"
@@ -7365,13 +4251,6 @@
       "healthcare-life-sciences/industrial-io-t-anomaly-detector"
     ],
     "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:72",
-        "route": "servicing",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
       {
         "kind": "page",
         "sourceProject": "industrial-capabilities-in-space",
@@ -7404,7 +4283,7 @@
       {
         "kind": "api",
         "sourceProject": "AIPathologySlideAnalyzer",
-        "path": "backend/src/server.js:435",
+        "path": "backend/src/server.js:446",
         "route": "/api/reports/:id/sign-off",
         "originApp": "healthcare-life-sciences/ambulance-ems-dispatch"
       },
@@ -7413,74 +4292,6 @@
         "sourceProject": "AIpoweredembryo",
         "path": "backend/routes/counseling.js:84",
         "route": "/sessions/:id/sign-off",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Similar Compounds",
-    "canonicalKey": "compound similar",
-    "aliases": [],
-    "kinds": [
-      "api",
-      "page"
-    ],
-    "routes": [
-      "/gap/similar-compounds",
-      "/similar-compounds"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:490",
-        "route": "/similar-compounds",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/aiExtras.ts:29",
-        "route": "/similar-compounds",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:100",
-        "route": "/gap/similar-compounds",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Simulation Twin",
-    "canonicalKey": "simulation twin",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "gap/simulation-twin"
-    ],
-    "sourceProjects": [
-      "industrial-capabilities-in-space"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:81",
-        "route": "gap/simulation-twin",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
@@ -7533,8 +4344,7 @@
       "AIResearchLiteratureAgent",
       "AIpoweredembryo",
       "ai-personalized-medicine",
-      "industrial-capabilities-in-space",
-      "tetrascience"
+      "industrial-capabilities-in-space"
     ],
     "consolidatedFromApps": [
       "healthcare-life-sciences/acceleratedrug",
@@ -7547,6 +4357,13 @@
     "evidence": [
       {
         "kind": "api",
+        "sourceProject": "AIPathologySlideAnalyzer",
+        "path": "backend/src/server.js:657",
+        "route": "/api/dashboard/stats",
+        "originApp": "healthcare-life-sciences/ambulance-ems-dispatch"
+      },
+      {
+        "kind": "api",
         "sourceProject": "AIHealthcareCompanion",
         "path": "server/routes/admin.js:14",
         "route": "/stats",
@@ -7555,49 +4372,21 @@
       {
         "kind": "api",
         "sourceProject": "AIPredictdisease",
-        "path": "backend/src/server.js:150",
+        "path": "backend/src/server.js:157",
         "route": "/api/dashboard/stats",
         "originApp": "healthcare-life-sciences/patient-triagefor-er"
       },
       {
         "kind": "api",
-        "sourceProject": "AIPathologySlideAnalyzer",
-        "path": "backend/src/server.js:646",
-        "route": "/api/dashboard/stats",
-        "originApp": "healthcare-life-sciences/ambulance-ems-dispatch"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIIndustrialIoTAnomalyDetector",
-        "path": "backend/routes/dashboard.js:6",
+        "sourceProject": "AIAcceleratedrug",
+        "path": "backend/src/routes/dashboard.js:5",
         "route": "/stats",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "AIpoweredembryo",
-        "path": "backend/routes/dashboard.js:8",
-        "route": "/stats",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "backend/routes/dashboard.js:6",
-        "route": "/stats",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/searchAnalytics.ts:31",
-        "route": "/stats",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+        "originApp": "healthcare-life-sciences/acceleratedrug"
       },
       {
         "kind": "api",
         "sourceProject": "AIResearchLiteratureAgent",
-        "path": "backend/server.js:25",
+        "path": "backend/server.js:14",
         "route": "/api/stats",
         "originApp": "healthcare-life-sciences/alzheimers-research-care-operations-hub-merged"
       },
@@ -7624,10 +4413,24 @@
       },
       {
         "kind": "api",
-        "sourceProject": "AIAcceleratedrug",
-        "path": "backend/src/routes/dashboard.js:5",
+        "sourceProject": "AIIndustrialIoTAnomalyDetector",
+        "path": "backend/routes/dashboard.js:6",
         "route": "/stats",
-        "originApp": "healthcare-life-sciences/acceleratedrug"
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      },
+      {
+        "kind": "api",
+        "sourceProject": "AIpoweredembryo",
+        "path": "backend/routes/dashboard.js:8",
+        "route": "/stats",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      },
+      {
+        "kind": "api",
+        "sourceProject": "industrial-capabilities-in-space",
+        "path": "backend/routes/dashboard.js:6",
+        "route": "/stats",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       },
       {
         "kind": "api",
@@ -7635,32 +4438,6 @@
         "path": "backend/routes/dashboard.js:7",
         "route": "/stats",
         "originApp": "healthcare-life-sciences/dental-practice-manager"
-      }
-    ]
-  },
-  {
-    "name": "Summarize Document",
-    "canonicalKey": "document summarize",
-    "aliases": [],
-    "kinds": [
-      "api"
-    ],
-    "routes": [
-      "/summarize-document"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/routes/ai.ts:87",
-        "route": "/summarize-document",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]
   },
@@ -7769,98 +4546,6 @@
     ]
   },
   {
-    "name": "Teleop Eva Agent",
-    "canonicalKey": "agent eva teleop",
-    "aliases": [],
-    "kinds": [
-      "page"
-    ],
-    "routes": [
-      "cf/teleop-eva-agent"
-    ],
-    "sourceProjects": [
-      "industrial-capabilities-in-space"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:89",
-        "route": "cf/teleop-eva-agent",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
-    "name": "Tenants",
-    "canonicalKey": "tenant",
-    "aliases": [
-      "Tenant Management Page"
-    ],
-    "kinds": [
-      "model",
-      "navigation",
-      "page"
-    ],
-    "routes": [
-      "/TenantManagementPage",
-      "/tenants"
-    ],
-    "sourceProjects": [
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-    ],
-    "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/TenantManagementPage.tsx",
-        "route": "/TenantManagementPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "model",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/models/Tenant.ts",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:75",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:93",
-        "route": "/tenants",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:75",
-        "route": "/tenants",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/Dashboard.tsx:187",
-        "route": "/tenants",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      }
-    ]
-  },
-  {
     "name": "Ticket",
     "canonicalKey": "ticket",
     "aliases": [],
@@ -7947,103 +4632,14 @@
     ]
   },
   {
-    "name": "Users",
-    "canonicalKey": "user",
-    "aliases": [
-      "User",
-      "User Management Page"
-    ],
-    "kinds": [
-      "api",
-      "model",
-      "navigation",
-      "page"
-    ],
-    "routes": [
-      "/UserManagementPage",
-      "/users"
-    ],
-    "sourceProjects": [
-      "AIHealthcareCompanion",
-      "healthcare",
-      "tetrascience"
-    ],
-    "consolidatedFromApps": [
-      "healthcare-life-sciences/hipaa-training-compliance-auditor",
-      "healthcare-life-sciences/industrial-io-t-anomaly-detector",
-      "healthcare-life-sciences/patient-triagefor-er"
-    ],
-    "evidence": [
-      {
-        "kind": "api",
-        "sourceProject": "AIHealthcareCompanion",
-        "path": "server/routes/admin.js:32",
-        "route": "/users",
-        "originApp": "healthcare-life-sciences/patient-triagefor-er"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/UserManagementPage.tsx",
-        "route": "/UserManagementPage",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "model",
-        "sourceProject": "tetrascience",
-        "path": "backend/src/models/User.ts",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "navigation",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:76",
-        "route": "",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/App.tsx:94",
-        "route": "/users",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/components/Sidebar.tsx:76",
-        "route": "/users",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "page",
-        "sourceProject": "tetrascience",
-        "path": "frontend/src/pages/Dashboard.tsx:197",
-        "route": "/users",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
-      {
-        "kind": "model",
-        "sourceProject": "healthcare",
-        "path": "ios-app/PracticeFlux/Core/Models/User.swift",
-        "route": "",
-        "originApp": "healthcare-life-sciences/hipaa-training-compliance-auditor"
-      }
-    ]
-  },
-  {
-    "name": "Utilities",
+    "name": "Utilities Page",
     "canonicalKey": "utility",
-    "aliases": [
-      "Utilities Page"
-    ],
+    "aliases": [],
     "kinds": [
       "page"
     ],
     "routes": [
-      "/UtilitiesPage",
-      "utilities"
+      "/UtilitiesPage"
     ],
     "sourceProjects": [
       "industrial-capabilities-in-space"
@@ -8052,13 +4648,6 @@
       "healthcare-life-sciences/industrial-io-t-anomaly-detector"
     ],
     "evidence": [
-      {
-        "kind": "page",
-        "sourceProject": "industrial-capabilities-in-space",
-        "path": "frontend/src/App.tsx:66",
-        "route": "utilities",
-        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
-      },
       {
         "kind": "page",
         "sourceProject": "industrial-capabilities-in-space",
@@ -8123,6 +4712,65 @@
         "sourceProject": "industrial-capabilities-in-space",
         "path": "backend/routes/launch-economics.js:34",
         "route": "/vehicles",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      }
+    ]
+  },
+  {
+    "name": "Withdraw",
+    "canonicalKey": "withdraw",
+    "aliases": [],
+    "kinds": [
+      "api"
+    ],
+    "routes": [
+      "/cases/:id/consent/withdraw"
+    ],
+    "sourceProjects": [
+      "AIpoweredembryo"
+    ],
+    "consolidatedFromApps": [
+      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+    ],
+    "evidence": [
+      {
+        "kind": "api",
+        "sourceProject": "AIpoweredembryo",
+        "path": "backend/routes/authoritative.js:8",
+        "route": "/cases/:id/consent/withdraw",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      }
+    ]
+  },
+  {
+    "name": "Work Orders",
+    "canonicalKey": "order work",
+    "aliases": [],
+    "kinds": [
+      "api"
+    ],
+    "routes": [
+      "/work-orders"
+    ],
+    "sourceProjects": [
+      "industrial-capabilities-in-space"
+    ],
+    "consolidatedFromApps": [
+      "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+    ],
+    "evidence": [
+      {
+        "kind": "api",
+        "sourceProject": "industrial-capabilities-in-space",
+        "path": "backend/routes/manufacturing.js:229",
+        "route": "/work-orders",
+        "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
+      },
+      {
+        "kind": "api",
+        "sourceProject": "industrial-capabilities-in-space",
+        "path": "backend/routes/manufacturing.js:247",
+        "route": "/work-orders",
         "originApp": "healthcare-life-sciences/industrial-io-t-anomaly-detector"
       }
     ]

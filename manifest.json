@@ -11,20 +11,20 @@
     "industrial-capabilities-in-space",
     "tetrascience"
   ],
-  "featureCount": 230,
-  "candidateFeatureCount": 337,
-  "eliminatedSimilarFeatures": 107,
-  "evidenceCount": 485,
+  "featureCount": 152,
+  "candidateFeatureCount": 240,
+  "eliminatedSimilarFeatures": 88,
+  "evidenceCount": 249,
   "aiPageCount": 0,
   "sourceAIPageCount": 0,
   "featureEvidencePolicy": "Existing source routes, pages, APIs, models, schemas, and navigation only",
   "optimizationPolicy": "Equivalent feature names are consolidated once per industry and assigned to one canonical app owner",
   "database": "database.sqlite",
   "databaseSeed": {
-    "seededProjects": 1,
-    "seededTables": 16,
-    "seededRows": 269
+    "seededProjects": 0,
+    "seededTables": 0,
+    "seededRows": 0
   },
-  "visibleFeatureCount": 10,
-  "featureVisibilityMode": "seeded-or-ai"
+  "visibleFeatureCount": 77,
+  "featureVisibilityMode": "source-backed-fallback"
 }
